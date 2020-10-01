@@ -1,0 +1,35 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:BugReporterApp.ViewModels"
+             x:Class="BugReporterApp.Views.BugReportPage"
+             Title="A &quot;bug&quot; happened"
+             Shell.PresentationMode="ModalAnimated">
+
+    <ContentPage.BindingContext>
+        <viewmodels:BugReportViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Name:" Margin="0,0,0,-20" FontAttributes="Bold" />
+            <Entry Placeholder="Enter your name..." />
+
+            <Label Text="Contact:" Margin="0,0,0,-20" FontAttributes="Bold" />
+            <Entry Placeholder="Enter your email/phone number..." />
+
+            <Label Text="What were you doing?" Margin="0,0,0,-20" FontAttributes="Bold" />
+            <Editor Placeholder="Enter a description on what you were doing and what happened that was bad..."
+                HeightRequest="300" />
+
+            <Label Text="Screenshots:" Margin="0,0,0,-20" FontAttributes="Bold" />
+            <Image Source="{Binding Screenshot}" HorizontalOptions="Start" />
+
+            <StackLayout Padding="20" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Cancel" />
+                <Button Text="Send" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
